@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 
 const page = () => {
     const [formData, setFormData] = useState({});
@@ -11,7 +13,7 @@ const page = () => {
     }
 
     console.log(formData)
-    
+
   return (
     <div className='flex flex-col items-center'>
       <h1 className='mb-4'>create user</h1>
