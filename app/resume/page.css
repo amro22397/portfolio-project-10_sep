@@ -1,0 +1,19 @@
+#item-duration {
+    @apply text-orange-200;
+}
+
+#item-name {
+    @apply text-white;
+}
+
+#item-company {
+    @apply text-blue-400
+}
+
+#skill-div:hover #skill-icon {
+    color: rgb(223, 223, 223);
+}
+
+#skill-div:hover #skill-text {
+    color: rgb(223, 223, 223);;
+}
