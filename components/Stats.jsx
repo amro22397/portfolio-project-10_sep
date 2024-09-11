@@ -3,19 +3,28 @@
 import React from 'react'
 import CountUp from 'react-countup'
 
+import { projects } from '../public/Constants'
+import { about, experience, education, skills } from '../public/Constants'
+
+var dPast = 'April 1, 2024';
+var d1 = new Date();
+var d2 = new Date(dPast);
+var dCalc = Math.abs((d1-d2)/31556952000);   // difference in milliseconds
+var diff = Math.ceil(10 * dCalc)/10;
+
 const stats = [
     {
-        num: 1,
+        num: diff,
         text: "Years Of Experience",
     },
     
     {
-        num: 6,
+        num: projects.length,
         text: "Projects completed",
     },
 
     {
-        num: 8,
+        num: skills.skillList.length,
         text: "Technologies mastered",
     },
 

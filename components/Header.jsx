@@ -5,39 +5,60 @@ import Nav from './Nav'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import MobileNav from './MobileNav'
-import { links } from '@/public/Constants';
+import { links } from '../public/Constants.js';
+
 import { usePathname } from 'next/navigation'
 import Social from './Social'
 
+import { useSession, signOut } from 'next-auth/react' 
+
 
 const Header = () => {
+  
+  const session = useSession();
+  console.log(session)
+
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
    return (
     <>
-    <header className='py-8 xl:py-12 text-white hidden xl:flex items-center'>
+
+    <header className='py-8 xl:py-12 text-white hidden xl:flex flex-row items-center justify-between'>
+
         <div className="container mx-auto flex flex-row items-center justify-between">
 
             <div className="flex flex-row items-center gap-8 text-gray-700
             font-sans font-semibold text-md">
-              <Link href="/contact" className='text-white'>
-            <Button className="rounded-full text-sm">Hire Me</Button>
-            </Link>
             
             <Nav />
 
             </div>
         </div>
 
-        <div className='xl:mb-0 mt-1 mb-8'>
+        {session.status === 'authenticated' && (
+            <div className='flex flex-row text-black mx-10 font-semibold
+            gap-4'>
+              <p>{session.data.user.email}</p>
+              <button onClick={() => {
+         signOut({callbackUrl: '/'}) }}
+              className='text-red-600'>Logout</button>
+            </div>
+          )}
+
+        <div className=' flex flex-row gap-6 items-center
+        xl:mb-0 mt-1 mb-8'>
                 <Social
                 containerStyles="flex gap-4"
                 iconStyles='text-4xl flex
                 justify-center items-center hover:transform hover:scale-110
                 hover:transition-all duration-500'
                 />
-
+                
+                <Link href="/contact" className='text-white'>
+            <Button className="bg-green-600 hover:bg-green-700 active:bg-green-950
+            rounded-full text-sm">Hire Me</Button>
+            </Link>
               </div>
     </header>
 

@@ -1,8 +1,10 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import PageTransition from "@/components/PageTransition";
-import StairTransition from "@/components/StairTransition";
+import Header from "../components/Header";
+import PageTransition from "../components/PageTransition";
+import StairTransition from '../components/StairTransition'
+import AppProvider from "../components/AppContext";
+import Social from "../components/Social";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -19,12 +21,29 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></link>
       <body
         className={`${jetBrainsMono.variable} max-w-[85%] mx-auto mb-12`}
       >
+        <AppProvider>
+
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
+
+
+<div className=' hidden max-xl:flex flex-row gap-6 items-center mt-6
+        xl:mb-0 mb-8'>
+                <Social
+                containerStyles="flex gap-4 justify-center mx-auto"
+                iconStyles='text-4xl flex
+                justify-center items-center hover:transform hover:scale-110
+                hover:transition-all duration-500'
+                />
+                
+              </div>
+        </AppProvider>
+
       </body>
     </html>
   );

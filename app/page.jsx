@@ -1,9 +1,10 @@
-import { Button } from '@/components/ui/button'
+import { Button } from '../components/ui/button'
 import { FiDownload } from 'react-icons/fi' 
 import React from 'react'
-import Social from '@/components/Social'
-import Photo from '@/components/Photo'
-import Stats from '@/components/Stats'
+import Social from '../components/Social'
+import Photo from '../components/Photo'
+import Stats from '../components/Stats'
+
 
 
 const page = () => {
@@ -33,20 +34,9 @@ const page = () => {
               className="uppercase flex items-center gap-2"
               href="/resume"
               >
-                <a href="/resume.pdf">Download CV</a>
+                <a href="/resume.pdf" target='_blank'>Download CV</a>
                 <FiDownload cassName='text-xl' />
               </Button>
-
-              <div className=' xl:hidden
-              xl:mb-0 mt-1 mb-8'>
-                <Social
-                containerStyles="flex gap-4"
-                iconStyles='text-4xl flex
-                justify-center items-center hover:transform hover:scale-110
-                hover:transition-all duration-500'
-                />
-
-              </div>
                         
             </div>
           </div>

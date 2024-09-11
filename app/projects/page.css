@@ -1,0 +1,7 @@
+#project-card {
+    @apply rounded-xl
+}
+
+#project-card img {
+    @apply rounded-t-xl
+}

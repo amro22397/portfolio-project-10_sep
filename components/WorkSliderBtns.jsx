@@ -14,11 +14,6 @@ const WorkSliderBtns = ({ containerStyles, btnStyles, iconStyles }) => {
             <PiCaretLeftBold className={iconStyles} />
         </button>
 
-        <button className='cursor-auto xl:bg-gray-400 px-3 xl:border
-        xl:text-white text-white/80 font-semibold'>
-          swipe between projects
-        </button>
-
         <button onClick={() => swiper.slideNext()}
         className={btnStyles}>
             <PiCaretRightBold className={iconStyles} />

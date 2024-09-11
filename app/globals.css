@@ -20,3 +20,11 @@
     @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold
   }
 }
+
+#form label input {
+  @apply px-2 w-[400px]
+}
+
+#form label textarea {
+  @apply w-[400px]
+}

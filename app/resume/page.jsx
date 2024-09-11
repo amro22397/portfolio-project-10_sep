@@ -11,145 +11,7 @@ import { SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss, SiGithub } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa6";
 
-const about = {
-  title: "About me",
-  descripiton: 'I am a Full Stack Web Developer. I can design the frontend and the backend of the website. Also, I can use many tools and libraries to make the page looks good and responsive.',
-  info: [
-    {
-      fieldName: "Name",
-      fieldValue: "Amro El-Mutasim"
-    },
-    {
-      fieldName: "Phone Number",
-      fieldValue: "+96879335801"
-    },
-    {
-      fieldName: "Whatsapp Number",
-      fieldValue: "+249995291772"
-    },
-    {
-      fieldName: "Experience",
-      fieldValue: "0-1 Year"
-    },
-    {
-      fieldName: "Nationality",
-      fieldValue: "Sudanese"
-    },
-    {
-      fieldName: "Email",
-      fieldValue: "amroalmutasim22@gmail.com"
-    },
-    {
-      fieldName: "Freelance",
-      fieldValue: "Available"
-    },
-
-    {
-      fieldName: "Languages",
-      fieldValue: "Arabic, English"
-    },
-  ] 
-}
-
-const experience = {
-    items: false,
-  }
-
-  const education = {
-    title: "My Education",
-    descripiton: "",
-    items: [
-
-      {
-        duration: "MAR 2024",
-        degree: "Responsive Web Design Certification",
-        institution: "Free Code Camp Website"
-      },
-
-      {
-        duration: "MAR 2024",
-        degree: "BIM Fundamentals Certification (Building Information Modeling) - Structure Design",
-        institution: "Coursera Website - University Of Taiwan"
-      },
-
-      {
-        duration: "FEB 2024",
-        degree: "Learning AutoCAD 2024",
-        institution: "LinkedIn Learning"
-      },
-
-      {
-        duration: "FEB 2024",
-        degree: "Learning Revit 2024",
-        institution: "LinkedIn Learning"
-      },
-
-      {
-        duration: "NOV 2014 - DEC 2021",
-        degree: "Bachelor of Science (B.S.) in Civil Engineering",
-        institution: "University Of Khartoum, Sudan"
-      },
-    ],
-  }
-  
-;
-const skills = {
-  title: "My Skills",
-  descripiton: 
-  "I have many skills and able to use many tools and libraries that I will list below",
-  skillList: [
-    {
-      icon: <FaHtml5 />,
-      name: "HTML"
-    },
-    {
-      icon: <FaCss3 />,
-      name: "CSS"
-    },
-    {
-      icon: <FaJs />,
-      name: "JavaScript"
-    },
-
-    {
-      icon: <SiTailwindcss />,
-      name: "Tailwind CSS"
-    },
-
-    {
-      icon: <FaReact />,
-      name: "React"
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: "NextJs"
-    },
-    {
-      icon: <SiJquery />,
-      name: "Jquery"
-    },
-    {
-      icon: <FaNodeJs />,
-      name: "Node Js"
-    },
-    {
-      icon: <SiExpress />,
-      name: "Express"
-    },
-    {
-      icon: <SiMongodb />,
-      name: "MongoDB"
-    },
-    {
-      icon: <FaGitAlt />,
-      name: "Git"
-    },
-    {
-      icon: <SiGithub />,
-      name: "Github"
-    },
-  ]
-};
+import { about, experience, education, skills } from '../../public/Constants'
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs'
 
@@ -267,6 +129,10 @@ const page = () => {
                           className='text-white/60'>{item.institution}</p>
                         </div>
 
+                        
+                        <a href={item.certificateDownload} className="text-red-600 hover:text-white px-2 py-0 mt-2
+                        hover:underline cursor-pointer">Download Certificate</a>
+
                       </li>
                     )
                   })}
@@ -287,6 +153,7 @@ const page = () => {
                 </p>
               </div>
               <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4
+              lg:grid-cols-5 xl:grid-cols-4
               xl:gap-[30px] mb-20'>
                 {skills.skillList.map((skill, index) => {
                   return (

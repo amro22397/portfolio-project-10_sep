@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import Link from 'next/link'
-import { links } from '@/public/Constants'
+import { links } from '../public/Constants'
 
 
 
