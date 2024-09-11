@@ -81,9 +81,12 @@ export default function page() {
 
         <div className="container mx-auto">
 
-        <Link href='/projects'>
-        <p className='mb-5 text-md font-semibold flex flex-row items-center gap-1 text-gray-500
-        cursor-pointer hover:text-gray-700'><i class="fa-solid fa-arrow-left mt-[3px]"></i> Back to projects</p>
+        <Link href='/projects'
+        className='mb-5 text-md font-semibold flex flex-row items-center gap-1 text-gray-500
+        cursor-pointer hover:text-gray-700'>
+
+        Back to projects
+
         </Link>
 
             <div className="flex flex-col xl:flex-row xl:gap-[30px] justify-start items-start

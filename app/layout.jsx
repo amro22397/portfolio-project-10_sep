@@ -31,8 +31,9 @@ export default function RootLayout({ children }) {
         <StairTransition />
         <PageTransition>{children}</PageTransition>
 
+        </AppProvider>
 
-<div className=' hidden max-xl:flex flex-row gap-6 items-center mt-6
+        <footer className=' hidden max-xl:flex flex-row gap-6 items-center mt-6
         xl:mb-0 mb-8'>
                 <Social
                 containerStyles="flex gap-4 justify-center mx-auto"
@@ -41,9 +42,8 @@ export default function RootLayout({ children }) {
                 hover:transition-all duration-500'
                 />
                 
-              </div>
-        </AppProvider>
-
+        </footer>
+        
       </body>
     </html>
   );
