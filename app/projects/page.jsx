@@ -79,7 +79,7 @@ const page = () => {
                 <Link href={`/projects/${project.id}`}>
                  <div key={index} className="flex flex-col justify-start items-center
                 bg-gray-800/80 gap-3 shadow-lg mb-3 transform hover:scale-[1.01] transition-all duration-300 ease-in-out
-                cursor-pointer" id="project-card">
+                cursor-pointer h-[425px]" id="project-card">
                     
                     <img src={project.imageUrls[0].src} alt={project.title}
                     className='w-full h-56 object-fill' />
@@ -92,9 +92,10 @@ const page = () => {
                         </button>
 
                     <div className="flex flex-col justify-between items-center
-                     mb-4 gap-4 px-6 py-2">
+                     mb-4 gap-4 px-6 py-2 overflow-hidden hover:overflow-auto">
 
-                        <p className="text-sm text-white" style={{fontFamily: "sans-serif"}}>{project.description}</p>
+                        <p className="text-sm text-white
+                        " style={{fontFamily: "sans-serif"}}>{project.description}</p>
 
                     
                     </div>

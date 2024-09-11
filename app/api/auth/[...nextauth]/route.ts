@@ -8,7 +8,7 @@ import { User } from "../../../../models/User";
 
 
 const authOptions: NextAuthOptions = {
-    secret: process.env.SECRET,
+    secret: process.env.NEXTAUTH_SECRET,
     
     providers: [
         CredentialsProvider({
