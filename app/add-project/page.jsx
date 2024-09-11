@@ -195,9 +195,6 @@ const page = () => {
         className='bg-yellow-700 text-white px-3 py-1 rounded-full my-4'
       >{loading ? 'adding...' : 'Add project'}</button>
 
-      {dataCreated && (
-        <p>Project is Added Successfully</p>
-      )}
       </form>
 
       
