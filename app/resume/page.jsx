@@ -34,7 +34,8 @@ const page = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0'
+      className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0
+      max-xl:max-w-[90vw] mx-auto'
     >
       <div className="container mx-auto">
         <Tabs 
@@ -189,13 +190,15 @@ const page = () => {
               {about.descripiton}
               </p>
 
-              <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px]
+              <ul className="grid grid-cols-1 max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-2
+              max-xl:grid-cols-2
+              xl:grid-cols-2 gap-y-6 max-w-[620px]
               mx-auto xl:mx-0 mb-20">
                 {about.info.map((item, index) => {
                   return (
                     <li key={index}
                     className='flex flex-col items-center justify-center xl:justify-start gap-4
-                    border-b border-gray-600 pb-4 mx-2'>
+                    border-b border-gray-600 pb-4 mx-2 '>
                       <span className="">{item.fieldName}</span>
                       <span className="text-xl">{item.fieldValue}</span>
                     </li>

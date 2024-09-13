@@ -25,7 +25,8 @@ const page = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className='flex items-center justify-center py-2 xl:py-0'
+      className='flex items-center justify-center py-2 xl:py-0
+      max-xl:max-w-[90vw] mx-auto'
     >  
     <div className="container mx-auto">
 

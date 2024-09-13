@@ -74,25 +74,33 @@ export default function page() {
     <motion.section 
     initial={{opacity: 0}}
     animate={{opacity: 1, transition: {delay: 1.4, duration: 0.4, ease: "easeIn"}}}
-    className='min-h-[80vh] flex flex-col justify-center py-12 xl:px-0'
+    className='min-h-[80vh] flex flex-col justify-center items-center py-12 px-0 xl:px-0 overflow-x-hidden
+    '
     >
         
 
 
-        <div className="container mx-auto">
+        <div className="container flex flex-col max-xl:items-center justify-center mx-auto">
 
-        <Link href='/projects'
-        className='mb-5 text-md font-semibold flex flex-row items-center gap-1 text-gray-500
-        cursor-pointer hover:text-gray-700'>
+        
+
+            <div className="flex flex-col xl:flex-row xl:gap-[30px]
+            gap-12">
+
+
+
+                <div className=" xl:h-[460px] flex flex-col
+                mx-0 max-xl:mx-7 ">
+                    
+                    <Link href='/projects'
+        className='mb-5 text-md font-semibold flex flex-row items-center gap-1 text-black
+        cursor-pointer hover:underline'>
 
         Back to projects
 
         </Link>
 
-            <div className="flex flex-col xl:flex-row xl:gap-[30px] justify-start items-start
-            gap-12">
-                <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col
-                xl:justify-between ">
+
                     <div className='flex flex-col gap-5 h-[50%]'>
 
 
@@ -142,7 +150,7 @@ export default function page() {
                     </div>
                 </div>
 
-                <div className="w-full xl:w-[50%]">
+                <div className="w-[98vw] xl:w-[50%] justify-center items-center">
                     <Swiper
                     navigation
                     pagination
@@ -156,17 +164,21 @@ export default function page() {
                             return (
                             <SwiperSlide key={index} className='w-full'>
                                 <div className="h-[460px] relative group flex justify-center items-center
-                                max-sm:h-[250px] max-md:h-[320px] max-lg:h-[390px]
+                                max-sm:h-[290px] max-md:h-[330px] max-lg:h-[410px]
+                                
                                 bg-pink-50/20">
                                     <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10'>
 
                                     </div>
 
-                                    <div className="relative w-full h-full">
+                                    <div id='project-image' 
+                                    className="relative w-full h-full
+                                    ">
                                         <Image 
                                         src={image.src}
                                         fill
-                                        className='object-fill'
+                                        className='object-fill
+                                        '
                                         alt={image.alt}
                                         />
                                     </div>
