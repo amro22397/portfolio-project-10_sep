@@ -137,6 +137,10 @@ export const projects = [
         category: "Frontend",
         imageUrls: [
             {
+                src: '/projects-image/shoes-store/2024-06-07 13_17_37-Night Mode for Windows (9j7g5d).png',
+                alt: 'image-aafdv'
+            },
+            {
                 src: '/projects-image/shoes-store/image 1.png',
                 alt: 'image-1'
             },
@@ -148,8 +152,75 @@ export const projects = [
                 src: '/projects-image/shoes-store/image 3.png',
                 alt: 'image-3'
             },
+            {
+                src: '/projects-image/shoes-store/image 4.png',
+                alt: 'image-4'
+            },
+            {
+                src: '/projects-image/shoes-store/image 5.png',
+                alt: 'image-5'
+            },
+            {
+                src: '/projects-image/shoes-store/image 6.png',
+                alt: 'image-6'
+            },
         ]
     },
+    {
+      id: 5,
+      title: "Small Frontend Projects",
+      description: " There are many photos of small frontend projects...",
+      technologies: "Html, CSS, JavaScript, Tailwind CSS",
+      link: "",
+      date: "",
+      category: "Frontend",
+      imageUrls: [
+          {
+              src: '/projects-image/small-frontend-projects/1.png',
+              alt: 'image-1'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/2.png',
+              alt: 'image-2'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/3.png',
+              alt: 'image-3'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/4.png',
+              alt: 'image-4'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/5.png',
+              alt: 'image-5'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/6.png',
+              alt: 'image-6'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/7.png',
+              alt: 'image-7'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/8.png',
+              alt: 'image-8'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/9.png',
+              alt: 'image-9'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/10.png',
+              alt: 'image-10'
+          },
+          {
+              src: '/projects-image/small-frontend-projects/11.png',
+              alt: 'image-11'
+          },
+      ]
+  },
     
 ]
 
