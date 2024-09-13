@@ -6,6 +6,9 @@ import { SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss, SiGithub } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa6";
 
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+
+
 export const links = [
     {
         name: "Home",
@@ -316,3 +319,21 @@ export const about = {
       },
     ]
   };
+
+  export const info = [
+    {
+      icon: <FaPhoneAlt />,
+      title: "Phone",
+      description: "+968 79335801"
+    },
+    {
+      icon: <FaEnvelope />,
+      title: "Email",
+      description: "amroalmutasim22@gmail.com"
+    },
+    {
+      icon: <FaMapMarkerAlt />,
+      title: "Address",
+      description: "Alshifa Street, AlMawalih South, Oman"
+    },
+  ];
