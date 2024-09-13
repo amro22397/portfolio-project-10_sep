@@ -29,6 +29,7 @@ const page = () => {
 
 const handleChange = () => {
   setMessageSuccess(false);
+  setError('');
 }
 
 
