@@ -136,10 +136,7 @@ export const projects = [
         date: "2024-06-07",
         category: "Frontend",
         imageUrls: [
-            {
-                src: '/projects-image/shoes-store/2024-06-07 13_17_37-Night Mode for Windows (9j7g5d).png',
-                alt: 'image-aafdv'
-            },
+            
             {
                 src: '/projects-image/shoes-store/image 1.png',
                 alt: 'image-1'
@@ -151,6 +148,10 @@ export const projects = [
             {
                 src: '/projects-image/shoes-store/image 3.png',
                 alt: 'image-3'
+            },
+            {
+                src: '/projects-image/shoes-store/2024-06-07 13_17_37-Night Mode for Windows (9j7g5d).png',
+                alt: 'image-aafdv'
             },
             {
                 src: '/projects-image/shoes-store/image 4.png',
