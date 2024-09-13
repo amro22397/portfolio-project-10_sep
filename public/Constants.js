@@ -200,6 +200,13 @@ export const about = {
       items: [
   
         {
+          duration: "NOV 2014 - DEC 2021",
+          degree: "Bachelor of Science (B.S.) in Civil Engineering",
+          institution: "University Of Khartoum, Sudan",
+          certificateDownload: "/certificates/University Certificate Details.pdf",
+        },
+
+        {
           duration: "MAR 2024",
           degree: "Responsive Web Design Certification",
           institution: "Free Code Camp Website",
@@ -226,13 +233,28 @@ export const about = {
           institution: "LinkedIn Learning",
           certificateDownload: "/certificates/Learning Revit 2024.pdf",
         },
-  
+
         {
-          duration: "NOV 2014 - DEC 2021",
-          degree: "Bachelor of Science (B.S.) in Civil Engineering",
-          institution: "University Of Khartoum, Sudan",
-          certificateDownload: "/certificates/University Certificate Details.pdf",
+          duration: "May 2023",
+          degree: "General Record Exam - GRE",
+          institution: "ETS",
+          certificateDownload: "/certificates/GRE Report.pdf",
         },
+
+        {
+          duration: "NOV 2022",
+          degree: "IELTS certificate",
+          institution: "British Council",
+          certificateDownload: "/certificates/IELTS Certificate_compressed.pdf",
+        },
+
+        {
+          duration: "April 2014",
+          degree: "High School Certification",
+          institution: "Ministry Of Education - Sudan",
+          certificateDownload: "/certificates/High School Translated Certificate.pdf",
+        }
+
       ],
     }
     
