@@ -50,7 +50,7 @@ const SheetContent = React.forwardRef(({ side = "right", className, children, ..
     <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({ side }), className)} {...props}>
       <SheetPrimitive.Close
         className="absolute right-8 top-8 transition-opacity outline-none">
-        <IoMdClose className="text-3xl text-gray-700" />
+        <IoMdClose className="h-4 w-4 text-white-1" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
       {children}
