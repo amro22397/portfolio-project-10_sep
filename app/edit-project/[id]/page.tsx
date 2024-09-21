@@ -1,16 +1,22 @@
-'use client'
-
-import { useSession } from 'next-auth/react'
-import ProjectForm from '../../components/ProjectForm'
-import Link from 'next/link';
+import mongoose from 'mongoose';
+import ProjectForm from '../../../components/ProjectForm'
+import { Project } from '../../../models/project';
 
 
+type PageProps = {
+    params: {
+        id: string;
+    },
+};
+
+const page = async (pageProps: PageProps) => {
 
 
+  const id = pageProps.params.id;
 
-const page = () => {
+  mongoose.connect(process.env.MONGO_URL)
 
-  
+    const project = await Project.findById({_id: id})
   
   // AWS S3 upload
   /*
@@ -62,7 +68,6 @@ const page = () => {
       const imageUrl = await uploadToS3(selectedFile);
       setImageUrl(imageUrl);
     } catch (error) {
-      setErrorMessage('Error uploading');
       console.log(error)
     }
   } 
@@ -119,10 +124,6 @@ const page = () => {
    // cloudinary multiple upload images
 
 
-
-
-
-
     /* firebase upload
     const [uploading, setUploading] = useState(false);
     const [imageUploadError, setImageUploadError] = useState(false)
@@ -164,34 +165,12 @@ const page = () => {
 
 
 
-
-      const session = useSession();
-      console.log(session)
-    
-      if (session.status === 'unauthenticated') {
-        return (
-          <div className="text-center text-2xl font-bold">
-            Only admin can access this page...
-          </div>
-        )
-      }
-
-
   return (
     <div className='flex flex-col items-center w-full'>
+      <h1 className='mb-4'>Edit project</h1>
 
-<Link href="/projects"
-className='mb-5 flex justify-start content-start'>
-                <button className='bg-yellow-500 px-4 py-[6px] text-whites rounded-sm
-                border-2 border-black
-                font-semibold hover:bg-yellow-400 active:bg-yellow-700 transition-all duration-500'
-            >Back to projects</button>
-                </Link>
-
-      <h1 className='mb-4'>Add project</h1>
-
-      <ProjectForm />
-     
+      <ProjectForm project={project} id={id} />
+      
       
     </div>
     )

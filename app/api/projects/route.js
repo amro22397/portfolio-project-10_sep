@@ -16,6 +16,14 @@ export async function GET(req) {
     } catch (error) {
         return Response.json({ error })
     }
+}
 
 
+export async function DELETE(req) {
+    mongoose.connect(process.env.MONGO_URL)
+    const url = new URL(req.url);
+    const id = url.searchParams.get('_id');
+
+    await Project.findByIdAndDelete(id);
+    return Response.json(true);
 }

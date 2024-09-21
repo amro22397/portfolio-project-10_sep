@@ -1,43 +1,25 @@
-"use client"
-import React, { useState } from 'react'
-
+import React from 'react'
 import './page.css'
-
-import { motion } from 'framer-motion' 
-
-import { FaArrowRight } from "react-icons/fa";
-
-import { projects } from '../../public/Constants';
 import Link from 'next/link';
+import mongoose from 'mongoose';
+import { Project } from '../../models/project';
+import AddProject from '../../components/AddProject'
 
-import { useSession } from 'next-auth/react' 
 
+const page = async () => {
 
-const page = () => {
+    mongoose.connect(process.env.MONGO_URL)
 
-    const [category, setCategory] = useState('All');
+    const projects = await Project.find({}, {}, {sort: {createdAt: -1}})
 
-    const session = useSession();
   return (
-    <motion.div 
-    initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
-      }}
-      className='flex items-center justify-center py-2 xl:py-0
-      max-xl:max-w-[90vw] mx-auto'
-    >  
+     
     <div className="container mx-auto">
 
-    {session.status === 'authenticated' && (
-            <div className="">
-                <Link href="/add-project">
-                <button className='hover:underline font-semibold'
-            >Add Project</button>
-                </Link>
-        </div>
-        )}
+        
+            
+                <AddProject />
+        
 
         
        <div className="flex-row justify-start gap-7 items-center
@@ -46,21 +28,21 @@ const page = () => {
 
             <div className="flex flex-row gap-5">
 
-            <div onClick={() => setCategory('All')}
+            <div
              className="bg-yellow-600 px-3 py-1 font-sans text-white rounded-xl cursor-pointer
             text-2xl transform hover:scale-105 hover:transition-all duration-500
             ">
                 All
             </div>
 
-            <div onClick={() => setCategory('Frontend')}
+            <div
              className="bg-yellow-600 px-3 py-1 font-sans text-white rounded-xl cursor-pointer
             text-2xl transform hover:scale-105 hover:transition-all duration-500
             ">
                 Frontend
             </div>
 
-            <div onClick={() => setCategory('Fullstack')}
+            <div
             className="bg-yellow-600 px-3 py-1 font-sans text-white rounded-xl cursor-pointer
             text-2xl transform hover:scale-105 hover:transition-all duration-500
             ">
@@ -77,12 +59,12 @@ const page = () => {
         max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-2 max-xl:grid-cols-2">
 
             {projects.length > 0 && projects.map((project, index) => (
-                <Link href={`/projects/${project.id}`}>
+                <Link href={`/projects/${project._id}`}>
                  <div key={index} className="flex flex-col justify-start items-center
                 bg-gray-800/80 gap-3 shadow-lg mb-3 transform hover:scale-[1.01] transition-all duration-300 ease-in-out
                 cursor-pointer h-[425px]" id="project-card">
                     
-                    <img src={project.imageUrls[0].src} alt={project.title}
+                    <img src={project.imageUrls[0]} alt={project.title}
                     className='w-full h-56 object-fill' />
 
                     <h2 className="text-2xl font-semibold text-orange-400">{project.title}</h2>
@@ -109,8 +91,6 @@ const page = () => {
         </div>
     </div>
         
-      
-    </motion.div>
   )
 }
 

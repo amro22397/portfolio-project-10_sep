@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <AppProvider>
 
         <Header />
-        <StairTransition />
+        
         <PageTransition>{children}</PageTransition>
 
         </AppProvider>

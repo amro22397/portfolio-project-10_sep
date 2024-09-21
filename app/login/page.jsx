@@ -27,7 +27,6 @@ const page = () => {
             [e.target.id] : e.target.value,
         })
     }
-
   return (
     <div className='flex flex-col items-center'>
       <h1 className='mb-4'>login</h1>

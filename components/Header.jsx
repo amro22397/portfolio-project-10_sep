@@ -40,11 +40,15 @@ const Header = () => {
             <div className='flex flex-row text-black mx-10 font-semibold
             gap-4'>
               <p>{session.data.user.email}</p>
+
               <button onClick={() => {
          signOut({callbackUrl: '/'}) }}
               className='text-red-600'>Logout</button>
             </div>
           )}
+
+          
+
 
         <div className=' flex flex-row gap-6 items-center
         xl:mb-0 mt-1 mb-8'>
@@ -54,11 +58,24 @@ const Header = () => {
                 justify-center items-center hover:transform hover:scale-110
                 hover:transition-all duration-500'
                 />
-                
+
+                <div className="flex flex-row items-center gap-[8.5px]">
+
+                  
                 <Link href="/contact" className='text-white'>
             <Button className="bg-green-600 hover:bg-green-700 active:bg-green-950
             rounded-full text-sm">Hire Me</Button>
             </Link>
+
+            {session.status === 'unauthenticated' && (
+            <Link href="/login" className='text-white'>
+            <Button className="bg-orange-700 active:bg-orange-900
+            rounded-full text-md">Log In</Button>
+            </Link>
+          )}
+
+                </div>
+                
               </div>
     </header>
 
