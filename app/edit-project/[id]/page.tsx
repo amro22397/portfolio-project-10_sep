@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import ProjectForm from '../../../components/ProjectForm'
 import { Project } from '../../../models/project';
+import { revalidatePath } from 'next/cache';
 
 
 type PageProps = {
@@ -17,6 +18,8 @@ const page = async (pageProps: PageProps) => {
   mongoose.connect(process.env.MONGO_URL)
 
     const project = await Project.findById({_id: id})
+
+    revalidatePath('/');
   
   // AWS S3 upload
   /*
