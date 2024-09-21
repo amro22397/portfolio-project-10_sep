@@ -4,6 +4,7 @@ import Link from 'next/link';
 import mongoose from 'mongoose';
 import { Project } from '../../models/project';
 import AddProject from '../../components/AddProject'
+import { revalidatePath } from 'next/cache';
 
 
 const page = async () => {
@@ -11,6 +12,8 @@ const page = async () => {
     mongoose.connect(process.env.MONGO_URL)
 
     const projects = await Project.find({}, {}, {sort: {createdAt: -1}})
+
+    revalidatePath('/');
 
   return (
      
