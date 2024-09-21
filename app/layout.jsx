@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></link>
 
       <body
-        className={`${jetBrainsMono.variable} flex flex-col justify-center xl:max-w-[85%] mx-auto mb-12`}
+        className={`${jetBrainsMono.variable} flex flex-col justify-center xl:max-w-[85%] mx-auto mb-12 max-xl:mt-4`}
       >
         <AppProvider>
 
