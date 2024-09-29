@@ -6,7 +6,7 @@ import { FaSquareUpwork } from "react-icons/fa6";
 
 
 const socials = [
-  { icon: 'FaLinkedin', path: "https://www.linkedin.com/in/amro-elfadil-46006a162/" },
+  { icon: 'FaLinkedin', path: "https://www.linkedin.com/in/amro97/" },
     { icon: 'FaGithub', path: "https://github.com/amro22397" },
     { icon: 'FaSquareUpwork', path: "https://www.upwork.com/freelancers/~01a0eb164053da3046" },
     { icon: 'FaFacebook', path: "https://www.facebook.com/amro97/" },

@@ -79,7 +79,7 @@ const Header = () => {
               </div>
     </header>
 
-    <div className="block xl:hidden mx-5 mt-6">
+    <div className="block xl:hidden mx-5 mt-6 mb-2">
     <nav className='flex flex-row justify-center items-center gap-8 mb-7'>
                 {links.map((link, index) => {
                     return (
@@ -96,6 +96,18 @@ const Header = () => {
                     )
                 })}
             </nav>
+
+            {session.status === 'authenticated' && (
+            <div className='flex flex-row text-black justify-center mb-4 font-semibold
+            gap-4 mx-auto'>
+              <p>{session.data.user.email}</p>
+
+              <button onClick={() => {
+         signOut({callbackUrl: '/'}) }}
+              className='text-red-600'>Logout</button>
+            </div>
+          )}
+
     </div>
     </>
   )

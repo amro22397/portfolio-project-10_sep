@@ -12,33 +12,33 @@ var d2 = new Date(dPast);
 var dCalc = Math.abs((d1-d2)/31556952000);   // difference in milliseconds
 var diff = Math.ceil(10 * dCalc)/10;
 
-const stats = [
-    {
-        num: diff,
-        text: "Years Of Experience",
-    },
+
+
+const Stats = ({allProjects}) => {
+    const stats = [
+        {
+            num: diff,
+            text: "Years Of Experience",
+        },
+        
+        {
+            num: allProjects.length,
+            text: "Projects completed",
+        },
     
-    {
-        num: projects.length,
-        text: "Projects completed",
-    },
-
-    {
-        num: skills.skillList.length,
-        text: "Technologies mastered",
-    },
-
-];
-
-const Stats = () => {
+        {
+            num: skills.skillList.length,
+            text: "Technologies mastered",
+        },
+    
+    ];
   return (
-    <section className='pt-8 pb-12 xl:pt-0 xl:pb-0'>
-        <div className="container mx-auto">
-            <div className='flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none'>
+            <div className='md:grid flex flex-wrap md:grid-cols-3 justify-center gap-6 xl:max-w-none
+            pt-8 pb-12 xl:pt-0 xl:pb-0'>
                 {stats.map((item, index) => {
                     return (
-                        <div className='flex-1 flex gap-4 items-center justify-center
-                        xl:justify-start'
+                        <div className='flex gap-4 items-center justify-center
+                        xl:justify-center'
                         key={index}>
 
                             <CountUp
@@ -56,8 +56,6 @@ const Stats = () => {
                     )
                 })}
             </div>
-        </div>
-    </section>
   )
 }
 
