@@ -33,12 +33,12 @@ const Stats = ({allProjects}) => {
     
     ];
   return (
-            <div className='md:grid flex flex-wrap md:grid-cols-3 justify-center gap-6 xl:max-w-none
+            <div className='md:grid flex flex-col gap-8 md:grid-cols-3 justify-center xl:max-w-none
             pt-8 pb-12 xl:pt-0 xl:pb-0'>
                 {stats.map((item, index) => {
                     return (
                         <div className='flex gap-4 items-center justify-center
-                        xl:justify-center'
+                        xl:justify-center mx-auto'
                         key={index}>
 
                             <CountUp
