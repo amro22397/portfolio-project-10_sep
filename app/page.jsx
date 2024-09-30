@@ -7,6 +7,21 @@ import Stats from '../components/Stats'
 import mongoose from 'mongoose'
 import { Project } from '../models/project'
 import { revalidatePath } from 'next/cache'
+import { skills } from '../public/Constants'
+
+
+import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from 'react-icons/fa'
+import { SiJquery } from "react-icons/si";
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
+import { SiTailwindcss, SiGithub } from "react-icons/si";
+import { FaGitAlt } from "react-icons/fa6";
+import { SiReactquery } from "react-icons/si";
+
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+
+import { Edit, User } from 'lucide-react'
 
 
 
@@ -36,6 +51,23 @@ const page = async () => {
                 Amro El-Mutasim</span>
 
             <span className='text-gray-600 text-3xl'>Full Stack Web Developer</span>
+
+            <div className="mt-2 max-sm:mt-4">
+              <div className="grid md:grid-cols-8 lg:grid-cols-11 lg:gap-y-8 xl:grid-cols-7
+               grid-cols-3 gap-2 xl:gap-y-4 text-4xl gap-y-4
+              text-gray-800 mb-8">
+              {skills.skillList.map((skill, index) => (
+                <div className='flex flex-col items-center
+                hover:transform hover:scale-105 hover:text-gray-900'>
+
+                <span className="">{skill.icon}</span>
+                <span className='text-sm font-semibold
+                text-black'>{skill.name}</span>
+
+                </div>
+
+              ))}
+              </div>
             
 
             <div className="flex flex-col xl:items-start justify-center gap-6 mt-2
@@ -51,6 +83,10 @@ const page = async () => {
                 <FiDownload cassName='text-xl' />
               </Button>
                         
+            </div>
+
+            
+              
             </div>
           </div>
 
