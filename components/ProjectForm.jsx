@@ -260,6 +260,13 @@ const ProjectForm = ({project, id}) => {
         </label>
 
         <label className='flex flex-row justify-between'>
+            <span>Youtube Link:</span>
+            <input defaultValue={project ? project.youtubeLink : ''}
+            onChange={handleChange} id="youtubeLink"
+             type="text" className='bg-gray-400 border-2 border-black rounded-xl ml-4'/>
+        </label>
+
+        <label className='flex flex-row justify-between'>
             <span>Date:</span>
             <input defaultValue={project ? project.date : ''}
             onChange={handleChange} id="date"

@@ -31,7 +31,11 @@ const ProjectSchema = new Schema({
 
     imageUrls: {
         type: Array,
-    }
+    },
+    youtubeLink: {
+        type: String,
+    },
+    
     
 }, { timestamps: true });
 

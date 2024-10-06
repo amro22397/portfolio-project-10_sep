@@ -25,6 +25,12 @@ const SwiperImage = ({project}) => {
     slidePerView={1}
     className="xl:h-[520px] mb-12"
     >
+      {project.youtubeLink &&project.youtubeLink.trim(' ') !== "" && (
+        <SwiperSlide className='w-full'>
+        <iframe width="560" height="315" src={project.youtubeLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+        className='w-full h-[460px] max-lg:h-[315px]'></iframe>
+        </SwiperSlide>
+      )}
 
         {project.imageUrls.map((image, index) => {
             return (
