@@ -10,3 +10,9 @@ export async function POST(request: Request) {
   return Response.json({ signature })
 }
 */
+
+import { NextRequest } from "next/server";
+
+        export async function POST(request: NextRequest) {
+            console.log('red')
+        }
