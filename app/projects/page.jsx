@@ -64,7 +64,7 @@ const page = async () => {
             {projects.length > 0 && projects.map((project, index) => (
                 <Link href={`/projects/${project._id}`}>
                  <div key={index} className="flex flex-col justify-start items-center
-                bg-gray-800/80 gap-3 shadow-lg mb-3 transform hover:scale-[1.01] transition-all duration-300 ease-in-out
+                bg-gray-700/80 gap-3 shadow-lg mb-3 transform hover:scale-[1.01] transition-all duration-300 ease-in-out
                 cursor-pointer h-[425px]" id="project-card">
                     
                     <img src={project.imageUrls[0]} alt={project.title}
