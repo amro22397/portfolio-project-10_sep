@@ -30,7 +30,7 @@ const SwiperImage = ({project}) => {
             return (
             <SwiperSlide key={index} className='w-full'>
                 <div className="h-[460px] relative group flex justify-center items-center
-                max-sm:h-[290px] max-md:h-[330px] max-lg:h-[410px]
+                max-sm:h-[300px] max-md:h-[380px] max-lg:h-[450px]
                 
                 bg-pink-50/20">
                     <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10'>
@@ -39,11 +39,12 @@ const SwiperImage = ({project}) => {
 
                     <div id='project-image' 
                     className="relative w-full h-full
+                    mx-auto
                     ">
                         <Image 
                         src={image}
                         fill
-                        className='object-fill
+                        className='object-fill mx-auto
                         '
                         alt={image.alt}
                         />

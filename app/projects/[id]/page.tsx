@@ -48,12 +48,13 @@ export default async function page(props: PageProps) {
 
 
         <div className="container flex flex-col max-xl:items-center justify-center mx-auto
-        mt-9">
+        mt-9 mb-40">
 
 
             <div className="flex flex-col xl:flex-row xl:gap-[30px]
             gap-12">
 
+                <pre className='hidden'>{JSON.stringify(project, null, 2)}</pre>
 
                 <div className=" xl:h-[460px] flex flex-col
                 mx-0 max-xl:mx-7 ">
@@ -95,14 +96,30 @@ export default async function page(props: PageProps) {
                         <p className="text-gray-700">{project.date}</p>
 
 
-                        <p className="text-gray-800 text-md
+                        <p className="text-gray-800 text-md whitespace-pre-line
                         " style={{fontFamily: 'sans-serif'}}>{project.description}</p>
+                        
+                        <div className="flex flex-wrap gap-6
+                        text-md font-semibold mt-2">
+                            {project.technologiesArray.map((tech, index) => (
+                                <span 
+                                key={index} className="bg-gray-300 px-4 py-[2.5px] rounded-full
+                                text-gray-800 hover:transform hover:scale-110 cursor-default transition-all duration-50
+                                hover:text-gray-900"
+                                >{tech}</span>
+                            ))}
+                        </div>
 
+                        {/*
                         <div className="w-[95%] text-lg
                          px-3 py-2 rounded-md">
                             <span className='font-bold
-                            text-green-600'>{project.technologies}</span>
+                            text-green-600 hidden'>{project.technologies}</span>
                         </div>
+                        */}
+                        
+
+                        
 
                         <ul className="flex gap-4"></ul>
 

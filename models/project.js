@@ -13,6 +13,10 @@ const ProjectSchema = new Schema({
         type: String,
     },
 
+    technologiesArray: {
+        type: Array,
+    },
+
     link: {
         type: String,
     },

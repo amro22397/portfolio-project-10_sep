@@ -8,15 +8,18 @@ import { UploadButton } from "../utils/uploadthing";
 import { useSession } from 'next-auth/react'
 import { skills } from '../public/Constants';
 
+import './ProjectForm.css'
+
 
 const ProjectForm = ({project, id}) => {
 
 
     const [formData, setFormData] = useState({
-        imageUrls: [],
+        imageUrls: project ? project.imageUrls : [],
         title: project ? project.title : '',
         description: project ? project.description : '',
         technologies: project ? project.technologies : '',
+        technologiesArray: project ? project.technologiesArray : [],
         link: project ? project.link : '',
         date: project ? project.date : '',
         category: project ? project.category : '',
@@ -27,15 +30,27 @@ const ProjectForm = ({project, id}) => {
     const [images, setImages] = useState([]);
     let imagesStrings = [];
 
-    useEffect(() => {
-        if (project) {
-            setFormData({
-                ...formData, imageUrls: project.imageUrls
-            })
-        }
-    }, [project]);
+    
+    // handle change in checkboxes
+    const [skillsUsed, setskillsUsed] = useState(project ? project.technologiesArray :[]);
+
+
+    const handleCheckboxesChange = (e) => {
+
+      if (e.target.checked) {
+        setskillsUsed(prev => [...prev, e.target.id])
+      } else {
+        setskillsUsed(skillsUsed.filter((skill) => skill !== e.target.id))
+      }
+      
+    }
+
+    console.log(skillsUsed)
+
+
 
     console.log(formData)
+    
 
     useEffect(() => {
         
@@ -48,6 +63,15 @@ const ProjectForm = ({project, id}) => {
       console.log(imagesStrings)
 
     }, [images]);
+
+
+
+
+
+
+    
+
+
 
     
 
@@ -72,6 +96,8 @@ const ProjectForm = ({project, id}) => {
             return setErrorMessage('You must enter at least one image!!');
           }
 
+          // Edit project function
+
           if (id) {
             const data = { id: project._id, ...formData}
 
@@ -86,12 +112,14 @@ const ProjectForm = ({project, id}) => {
             setLoading(false)
 
             if (res.ok) {
-                route.push('/projects')
+                route.push('/projects/' + project._id)
             } else {
                 console.log(res)
                 setErrorMessage('Error adding project')
             }
             
+            // Add project function
+
           } else {
             const res = await fetch('/api/add-project', {
                 method: 'POST',
@@ -104,7 +132,7 @@ const ProjectForm = ({project, id}) => {
               setLoading(false)
 
               if (res.ok) {
-                route.push('/projects')
+                route.push('/projects/')
               } else {
                 console.log(res)
                 setErrorMessage('Error adding project')
@@ -123,8 +151,16 @@ const ProjectForm = ({project, id}) => {
         imageUrls: formData.imageUrls.filter((_, i) => i !== index),
       });
     };
+    
 
+    useEffect(() => {
+      setFormData({
+        ...formData, technologiesArray: skillsUsed
+      })
+    }, [skillsUsed]);
 
+    console.log(skillsUsed)
+    console.log(formData)
 
     const session = useSession();
   console.log(session)
@@ -140,7 +176,7 @@ const ProjectForm = ({project, id}) => {
     
   return (
     <div>
-      <form onSubmit={handleSubmitform}id="form"
+      <form onSubmit={handleSubmitform} id="form"
       className='gap-4 flex flex-col w-[550px]'>
         <label className='flex flex-row justify-between'>
             <span>Title:</span>
@@ -153,29 +189,49 @@ const ProjectForm = ({project, id}) => {
             <span>Description:</span>
             <textarea defaultValue={project ? project.description : ''}
              onChange={handleChange} id="description"
-            className='bg-gray-400 border-2 border-black rounded-xl ml-4 px-2'/>
+            className='bg-gray-400 border-2 border-black rounded-xl ml-4 px-2'
+            rows={4}/>
         </label>
 
-        <label className='flex flex-row justify-between'>
+        <label className='flex flex-row justify-between gap-14'>
             <span>Technologies:</span>
+
+            <div className=" flex flex-col gap-4">
+
+              {/* old technologies input */}
             <input defaultValue={project ? project.technologies : ''}
             onChange={handleChange} id="technologies"
-             type="text" className='bg-gray-400 border-2 border-black rounded-xl ml-4'/>
-        </label>
+             type="text" className='bg-gray-400 border-2 border-black rounded-xl ml-4
+             hidden'/>
 
-        <div className="">
-            <label className='font-semibold'>These are the list of technologies that I learned:</label>
-            <div className="grid grid-cols-8 gap-x-7 gap-y-2 mt-5 my-8">
-            {skills.skillList.map(skill => {
-                return (
-                    <p className="flex flex-row " key={skill.name}>
-                    {skill.name}
-                    </p>
-                )
-            }
-            )}
+             {/* new technologies input */}
+            <div className="flex flex-wrap gap-4 mx-0 ">
+            {skills.skillList.map(skill => (
+
+              <label 
+              key={skill.name}
+              className='flex flex-row items-center
+              gap-2 text-sm font-semibold'
+              id='checkbox-label'>
+
+                
+
+                <input 
+            onChange={handleCheckboxesChange} id={skill.name}
+             type="checkbox" className='checkboxes'
+             defaultChecked={project ? project.technologiesArray.includes(skill.name) : false} />
+
+             <span className="">{skill.name}</span>
+
+              </label>
+            ))}
+
             </div>
-        </div>
+
+
+
+            </div>
+        </label>
 
         <label className='flex flex-row justify-between'>
             <span>Web Link:</span>
