@@ -6,6 +6,8 @@ import { SiNextdotjs } from "react-icons/si";
 import { SiTailwindcss, SiGithub } from "react-icons/si";
 import { FaGitAlt } from "react-icons/fa6";
 import { SiReactquery } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
+
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
@@ -365,6 +367,10 @@ export const about = {
       {
         icon: <SiNextdotjs />,
         name: "NextJs"
+      },
+      {
+        icon: <SiTypescript />,
+        name: "TypeScript"
       },
       {
         icon: <SiJquery />,

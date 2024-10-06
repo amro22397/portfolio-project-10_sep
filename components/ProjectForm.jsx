@@ -8,7 +8,13 @@ import { UploadButton } from "../utils/uploadthing";
 import { useSession } from 'next-auth/react'
 import { skills } from '../public/Constants';
 
+
+
+
 import './ProjectForm.css'
+import Image from 'next/image';
+
+import ReactPlayer from 'react-player'
 
 
 const ProjectForm = ({project, id}) => {
@@ -173,6 +179,19 @@ const ProjectForm = ({project, id}) => {
     )
   }
 
+
+  // upload media files
+
+  const [files, setFiles] = useState(null);
+
+  const handleFileChange = (e) => {
+    const files = e.target.files;
+    setFiles(files);
+  }
+
+  const isImage = (file) => file.type.startsWith('image')
+
+  const isVideo = (file) => file.type.startsWith('video')
     
   return (
     <div>
@@ -299,6 +318,39 @@ const ProjectForm = ({project, id}) => {
 
         
       </form>
+
+
+      <input type="file" onChange={handleFileChange}
+      multiple />
+
+      <div className="flex flex-col items-center justify-center">
+        {
+          files && Array.from(files).map((file, index) => {
+            return (
+              <div key={index} className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center">
+                  {
+                    isImage(file) && (
+                      <Image 
+                      src={URL.createObjectURL(file)}
+                      width={500}
+                      height={500}
+                      alt='Image'
+                      />
+                    )
+                  }
+
+                  {
+                    isVideo(file) && (
+                      <ReactPlayer url={URL.createObjectURL(file)} controls={true} />
+                    )
+                  }
+                </div>
+              </div>
+            )
+          })
+        }
+      </div>
 
       {errorMessage && (
         <p>{errorMessage}</p>
