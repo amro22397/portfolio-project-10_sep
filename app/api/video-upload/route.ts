@@ -92,3 +92,9 @@ export async function POST(request: NextRequest) {
 
 
 */
+
+import { NextRequest } from "next/server";
+
+        export async function POST(request: NextRequest) {
+            console.log('red')
+        }
