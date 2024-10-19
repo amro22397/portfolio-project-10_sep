@@ -1,9 +1,14 @@
 #project-card {
-    @apply rounded-xl
+    @apply rounded-xl max-sm:rounded-none;
 }
 
 #project-card img {
-    @apply rounded-t-xl
+    @apply rounded-t-xl max-sm:rounded-none;
+}
+
+#filter-key {
+  @apply bg-yellow-600 px-4 py-[2px] font-sans text-white  cursor-pointer
+  text-lg transform hover:scale-105 hover:transition-all duration-500
 }
 
 /* width */
