@@ -1,11 +1,11 @@
 #form label input:not(.checkboxes) {
     @apply px-2 py-[3px] bg-gray-200 border-gray-400/60 shadow-sm border rounded-sm focus:outline-none 
-    text-gray-600 text-[17px] w-[400px] max-sm:w-[320px];
+    text-gray-600 text-[17px] w-[400px] max-sm:w-[300px];
 
     font-family: Arial, Helvetica, sans-serif;
 }
 
 #form label textarea {
     @apply px-2 py-[3px] bg-gray-200 border-gray-400/60 shadow-sm border rounded-sm focus:outline-none
-    text-gray-600 text-[18px] w-[400px] max-sm:w-[320px]
+    text-gray-600 text-[18px] w-[400px] max-sm:w-[300px]
   }

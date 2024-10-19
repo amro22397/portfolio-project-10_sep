@@ -194,7 +194,7 @@ const ProjectForm = ({project, id}) => {
   const isVideo = (file) => file.type.startsWith('video')
     
   return (
-    <div className='max-w-[550px] max-sm:max-w-[450px]'>
+    <div className='max-w-[550px] max-sm:max-w-[425px]'>
       <form onSubmit={handleSubmitform} id="form"
       className='gap-4 flex flex-col '>
         <label className='flex flex-row justify-between'>
