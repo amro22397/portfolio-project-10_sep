@@ -2,6 +2,7 @@ import mongoose from 'mongoose';
 import ProjectForm from '../../../components/ProjectForm'
 import { Project } from '../../../models/project';
 import { revalidatePath } from 'next/cache';
+import Link from 'next/link';
 
 
 type PageProps = {
@@ -170,7 +171,16 @@ const page = async (pageProps: PageProps) => {
 
   return (
     <div className='flex flex-col items-center w-full'>
-      <h1 className='mb-4'>Edit project</h1>
+
+<Link href="/projects"
+className='mb-5 flex flex-row justify-start items-start content-start'>
+                <button className='bg-yellow-500 px-4 py-[6px] text-whites rounded-sm
+                border-2 border-black
+                font-semibold hover:bg-yellow-400 active:bg-yellow-700 transition-all duration-500'
+            >Back to projects</button>
+                </Link>
+
+      <h1 className='mb-4 text-2xl font-bold'>Edit project</h1>
 
       <ProjectForm project={project} id={id} />
       

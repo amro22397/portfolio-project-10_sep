@@ -194,9 +194,9 @@ const ProjectForm = ({project, id}) => {
   const isVideo = (file) => file.type.startsWith('video')
     
   return (
-    <div>
+    <div className='max-w-[550px] max-sm:max-w-[450px]'>
       <form onSubmit={handleSubmitform} id="form"
-      className='gap-4 flex flex-col w-[550px]'>
+      className='gap-4 flex flex-col '>
         <label className='flex flex-row justify-between'>
             <span>Title:</span>
             <input defaultValue={project ? project.title : ''}
@@ -212,7 +212,7 @@ const ProjectForm = ({project, id}) => {
             rows={4}/>
         </label>
 
-        <label className='flex flex-row justify-between gap-14'>
+        <label className='flex flex-row justify-between gap-14 max-sm:gap-[36.5px]'>
             <span>Technologies:</span>
 
             <div className=" flex flex-col gap-4">

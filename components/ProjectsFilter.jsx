@@ -11,7 +11,7 @@ const [projects, setProjects] = useState(allProjects);
 
     <>
     <div className="flex-row justify-start gap-7 items-center my-7
-       text-xl" style={{fontFamily: "sans-serif"}}>
+       text-xl max-sm:mx-2" style={{fontFamily: "sans-serif"}}>
 
 <div className="flex flex-row gap-5">
 
