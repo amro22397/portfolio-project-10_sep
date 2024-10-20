@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
 
@@ -10,7 +11,7 @@ const [projects, setProjects] = useState(allProjects);
   return (
 
     <>
-    <div className="flex-row justify-start gap-7 items-center my-7
+    <div className="flex-row justify-start gap-7 items-center
        text-xl max-sm:mx-2" style={{fontFamily: "sans-serif"}}>
 
 <div className="flex flex-row gap-5">
@@ -38,7 +39,7 @@ onClick={() => setProjects(fullStackProjects)}>
 max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-2 max-xl:grid-cols-2">
 
     {projects.length > 0 && projects.map((project, index) => (
-        <Link href={`/projects/${project._id}`}>
+        <Link key={index} href={`/projects/${project._id}`}>
          <div key={index} className="flex flex-col justify-start items-center
         bg-gray-700/80 gap-3 shadow-lg mb-3 transform hover:scale-[1.01] transition-all duration-300 ease-in-out
         cursor-pointer h-[425px]" id="project-card">

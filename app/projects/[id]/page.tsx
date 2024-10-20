@@ -43,6 +43,8 @@ export default async function page(props: PageProps) {
 
     const project = await Project.findById({_id: id})
 
+    console.log(project)
+
   return (
         
 
