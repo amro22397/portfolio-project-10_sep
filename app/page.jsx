@@ -79,8 +79,8 @@ const page = async () => {
               className="uppercase flex items-center gap-2"
               href="/resume"
               >
-                <a href="/resume.pdf" target='_blank'>Download CV</a>
-                <FiDownload cassName='text-xl' />
+                <a href="/resume-22-oct.pdf" target='_blank'>Download CV</a>
+                <FiDownload className='text-xl' />
               </Button>
                         
             </div>
