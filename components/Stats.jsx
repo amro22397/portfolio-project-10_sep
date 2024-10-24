@@ -5,12 +5,8 @@ import CountUp from 'react-countup'
 
 import { projects } from '../public/Constants'
 import { about, experience, education, skills } from '../public/Constants'
+import { diff } from '../public/Constants'
 
-var dPast = 'April 1, 2024';
-var d1 = new Date();
-var d2 = new Date(dPast);
-var dCalc = Math.abs((d1-d2)/31556952000);   // difference in milliseconds
-var diff = Math.ceil(10 * dCalc)/10;
 
 
 

@@ -15,6 +15,12 @@ import { IoMdCloudUpload } from "react-icons/io";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
 
+var dPast = 'March 1, 2024';
+var d1 = new Date();
+var d2 = new Date(dPast);
+var dCalc = Math.abs((d1-d2)/31556952000);   // difference in milliseconds
+export var diff = Math.ceil(10 * dCalc)/10;
+
 export const links = [
     {
         name: "Home",
@@ -249,7 +255,7 @@ export const about = {
       },
       {
         fieldName: "Experience",
-        fieldValue: "0-1 Year"
+        fieldValue: diff + " Years"
       },
       {
         fieldName: "Nationality",
@@ -279,19 +285,34 @@ export const about = {
       title: "My Education",
       descripiton: "",
       items: [
-  
-        {
-          duration: "NOV 2014 - DEC 2021",
-          degree: "Bachelor of Science (B.S.) in Civil Engineering",
-          institution: "University Of Khartoum, Sudan",
-          certificateDownload: "/certificates/University Certificate Details.pdf",
-        },
-
         {
           duration: "MAR 2024",
           degree: "Responsive Web Design Certification",
           institution: "Free Code Camp Website",
           certificateDownload: "/certificates/Web Development/Responsive Web Design Certification.png",
+        },
+
+        {
+          duration: "NOV 2022",
+          degree: "IELTS certificate",
+          institution: "British Council",
+          certificateDownload: "/certificates/IELTS Certificate_compressed.pdf",
+        },
+
+        {
+          duration: "May 2023",
+          degree: "General Record Exam - GRE",
+          institution: "ETS",
+          certificateDownload: "/certificates/GRE Report.pdf",
+          
+        },
+
+        {
+          duration: "April 2014",
+          degree: "High School Certification",
+          institution: "Ministry Of Education - Sudan",
+          certificateDownload: "/certificates/High School Arabic Certification.pdf",
+          englishTranslation: "/certificates/High School Translated Certificate.pdf",
         },
   
         {
@@ -316,25 +337,11 @@ export const about = {
         },
 
         {
-          duration: "May 2023",
-          degree: "General Record Exam - GRE",
-          institution: "ETS",
-          certificateDownload: "/certificates/GRE Report.pdf",
+          duration: "NOV 2014 - DEC 2021",
+          degree: "Bachelor of Science (B.S.) in Civil Engineering",
+          institution: "University Of Khartoum, Sudan",
+          certificateDownload: "/certificates/University Certificate Details.pdf",
         },
-
-        {
-          duration: "NOV 2022",
-          degree: "IELTS certificate",
-          institution: "British Council",
-          certificateDownload: "/certificates/IELTS Certificate_compressed.pdf",
-        },
-
-        {
-          duration: "April 2014",
-          degree: "High School Certification",
-          institution: "Ministry Of Education - Sudan",
-          certificateDownload: "/certificates/High School Translated Certificate.pdf",
-        }
 
       ],
     }

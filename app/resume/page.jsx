@@ -133,6 +133,11 @@ const page = () => {
                         
                         <a href={item.certificateDownload} target='_blank' className="text-red-600 hover:text-white px-2 py-0 mt-2
                         hover:underline cursor-pointer">Download Certificate</a>
+                        
+                        {item.englishTranslation && (
+                          <a href={item.englishTranslation} target='_blank' className="text-red-600 hover:text-white px-2 py-0 mt-2
+                          hover:underline cursor-pointer">Download English Translation</a>
+                        )}
 
                       </li>
                     )
