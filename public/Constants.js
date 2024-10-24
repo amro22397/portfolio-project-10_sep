@@ -368,12 +368,12 @@ export const about = {
         name: "React"
       },
       {
-        icon: <SiNextdotjs />,
-        name: "NextJs"
-      },
-      {
         icon: <SiTypescript />,
         name: "TypeScript"
+      },
+      {
+        icon: <SiNextdotjs />,
+        name: "NextJs"
       },
       {
         icon: <SiJquery />,

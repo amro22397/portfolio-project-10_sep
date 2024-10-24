@@ -39,12 +39,12 @@ const page = () => {
     >
       <div className="container mx-auto">
         <Tabs 
-        defaultValue='experience'
+        defaultValue='education'
         className='flex flex-col xl:flex-row gap-[60px]'
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0
           gap-6">
-          <TabsTrigger value="experience">Experience</TabsTrigger>
+          <TabsTrigger value="experience" className="hidden">Experience</TabsTrigger>
           <TabsTrigger value="education">Education</TabsTrigger>
           <TabsTrigger value="skills">Skills</TabsTrigger>
           <TabsTrigger value="about">About Me</TabsTrigger>
@@ -52,7 +52,7 @@ const page = () => {
 
         <div className="min-h-[70vh] w-full">
 
-          <TabsContent value="experience" className="w-full">
+          <TabsContent value="experience" className="w-full hidden">
           {!experience.items && (
                   <div className="mt-6 text-center text-xl font-semibold">
                     There is no work experience yet....
