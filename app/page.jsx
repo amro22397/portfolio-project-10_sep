@@ -29,7 +29,10 @@ const page = async () => {
 
   mongoose.connect(process.env.MONGO_URL)
 
-    const projects = await Project.find({}, {}, {sort: {createdAt: -1}})
+    const projects = await Project.find({}, {}, {sort: {createdAt: -1}});
+    const a = []
+
+    console.log(a);
 
     revalidatePath('/');
 

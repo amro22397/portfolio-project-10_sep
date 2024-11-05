@@ -44,8 +44,8 @@ max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-2 max-xl:grid-cols-2">
         bg-gray-700/80 gap-3 shadow-lg mb-3 transform hover:scale-[1.01] transition-all duration-300 ease-in-out
         cursor-pointer h-[425px]" id="project-card">
             
-            <img src={project.imageUrls[0]} alt={project.title}
-            className='w-full h-60 object-fill' />
+            <Image src={project.imageUrls[0]} alt={project.title}
+            className='object-fill' width={500} height={400} />
 
             <h2 className="text-2xl font-semibold text-orange-400">{project.title}</h2>
 
