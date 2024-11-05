@@ -45,7 +45,7 @@ max-sm:grid-cols-1 max-md:grid-cols-1 max-lg:grid-cols-2 max-xl:grid-cols-2">
         cursor-pointer h-[425px]" id="project-card">
             
             <Image src={project.imageUrls[0]} alt={project.title}
-            className='object-fill' width={500} height={400} />
+            className='object-fill' width={420} height={200} />
 
             <h2 className="text-2xl font-semibold text-orange-400">{project.title}</h2>
 
