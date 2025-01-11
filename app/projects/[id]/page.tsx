@@ -59,7 +59,7 @@ export default async function page(props: PageProps) {
                 <pre className='hidden'>{JSON.stringify(project, null, 2)}</pre>
 
                 <div className=" xl:h-[460px] flex flex-col
-                mx-0 max-xl:mx-7 ">
+                mx-0 max-xl:mx-7 w-full ">
                     
 
                     <div className=" flex flex-row items-center justify-between
@@ -84,7 +84,7 @@ export default async function page(props: PageProps) {
                     <div className='flex flex-col gap-5 h-[50%]'>
 
 
-                        <h2 className="text-[42px] font-bold leading-none text-black
+                        <h2 className="text-[42px] font-bold leading-none text-black dark:text-white
                         group-hover:text-gray-700 transition-all duration-500 capitalize
                         mb-3">
                             {project.title}
@@ -95,11 +95,13 @@ export default async function page(props: PageProps) {
                         {project.category}
                         </button>
 
-                        <p className="text-gray-700">{project.date}</p>
+                        <p className="text-gray-700 dark:text-slate-100">{project.date}</p>
 
 
-                        <p className="text-gray-800 text-md whitespace-pre-line
+                        <div className="w-full">
+                        <p className="text-gray-800 dark:text-slate-200 text-md whitespace-pre-line
                         " style={{fontFamily: 'sans-serif'}}>{project.description}</p>
+                        </div>
                         
                         <div className="flex flex-wrap gap-6
                         text-md font-semibold mt-2">

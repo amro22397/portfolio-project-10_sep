@@ -11,6 +11,7 @@ import { usePathname } from 'next/navigation'
 import Social from './Social'
 
 import { useSession, signOut } from 'next-auth/react' 
+import ThemeSwitch from './ThemeSwitch'
 
 
 const Header = () => {
@@ -28,7 +29,7 @@ const Header = () => {
 
         <div className="container mx-auto flex flex-row items-center justify-between">
 
-            <div className="flex flex-row items-center gap-8 text-gray-700
+            <div className="flex flex-row items-center gap-8 text-gray-700 dark:text-white
             font-sans font-semibold text-md">
             
             <Nav />
@@ -37,13 +38,13 @@ const Header = () => {
         </div>
 
         {session.status === 'authenticated' && (
-            <div className='flex flex-row text-black mx-10 font-semibold
+            <div className='flex flex-row text-black dark:text-white mx-10 font-semibold
             gap-4'>
               <p>{session.data.user.email}</p>
 
               <button onClick={() => {
          signOut({callbackUrl: '/'}) }}
-              className='text-red-600'>Logout</button>
+              className='text-red-600 dark:text-red-200'>Logout</button>
             </div>
           )}
 
@@ -53,13 +54,13 @@ const Header = () => {
         <div className=' flex flex-row gap-6 items-center
         xl:mb-0 mt-1 mb-8'>
                 <Social
-                containerStyles="flex gap-4"
+                containerStyles="flex gap-4 mx-[5px]"
                 iconStyles='text-4xl flex
                 justify-center items-center hover:transform hover:scale-110
                 hover:transition-all duration-500'
                 />
 
-                <div className="flex flex-row items-center gap-[8.5px]">
+                <div className="flex flex-row justify-center items-center gap-[8.5px]">
 
                   
                 <Link href="/contact" className='text-white'>
@@ -73,6 +74,8 @@ const Header = () => {
             rounded-full text-md">Log In</Button>
             </Link>
           )}
+          
+          <ThemeSwitch />
 
                 </div>
                 
@@ -85,8 +88,8 @@ const Header = () => {
                     return (
                     <Link href={link.path} key={index} 
                     className={`${
-                        link.path === pathname && "border-b-2 text-gray-950 border-gray-950"
-                    } text-xl text-gray-800 hover:text-gray-900
+                        link.path === pathname && "border-b-2 text-gray-950 border-gray-950 dark:text-white dark:border-slate-200"
+                    } text-xl text-gray-800 hover:text-gray-900 dark:text-slate-100 dark:hover:text-slate-200
                     transition-all duration-500
                     `}
                     style={{fontFamily: "sans-serif"}}
@@ -98,13 +101,13 @@ const Header = () => {
             </nav>
 
             {session.status === 'authenticated' && (
-            <div className='flex flex-row text-black justify-center mb-4 font-semibold
+            <div className='flex flex-row text-black dark:text-white justify-center mb-4 font-semibold
             gap-4 mx-auto'>
               <p>{session.data.user.email}</p>
 
               <button onClick={() => {
          signOut({callbackUrl: '/'}) }}
-              className='text-red-600'>Logout</button>
+              className='text-red-600 dark:text-red-200'>Logout</button>
             </div>
           )}
 

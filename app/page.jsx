@@ -49,11 +49,11 @@ const page = async () => {
             <h1 className="text-6xl font-semibold flex flex-col max-xl:hidden">
               Hello I am ...
             </h1>
-            <span className='text-red-700 text-5xl'>
+            <span className='text-red-700 dark:text-red-300  text-5xl'>
                 
                 Amro El-Mutasim</span>
 
-            <span className='text-gray-600 text-3xl'>Full Stack Web Developer</span>
+            <span className='text-gray-600 dark:text-slate-200 text-3xl'>Full Stack Web Developer</span>
 
             <div className="mt-2 max-sm:mt-4">
               <div className="grid md:grid-cols-8 lg:grid-cols-11 lg:gap-y-8 xl:grid-cols-7
@@ -61,11 +61,12 @@ const page = async () => {
               text-gray-800 mb-8">
               {skills.skillList.map((skill, index) => (
                 <div className='flex flex-col items-center
-                hover:transform hover:scale-105 hover:text-gray-900'>
+                hover:transform hover:scale-105 hover:text-gray-900
+                dark:text-slate-200 dark:hover:text-slate-300'>
 
                 <span className="">{skill.icon}</span>
                 <span className='text-sm font-semibold
-                text-black'>{skill.name}</span>
+                text-black dark:text-white'>{skill.name}</span>
 
                 </div>
 

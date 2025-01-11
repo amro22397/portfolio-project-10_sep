@@ -37,7 +37,7 @@ const page = () => {
       className='min-h-[80vh] flex items-center justify-center py-12 xl:py-0
       max-xl:max-w-[90vw] mx-auto'
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto"> 
         <Tabs 
         defaultValue='education'
         className='flex flex-col xl:flex-row gap-[60px]'
@@ -101,7 +101,7 @@ const page = () => {
           
             <div className="flex flex-col gap-[30px] text-center xl:text-left">
               <h3 className="text-4xl font-bold">{education.title}</h3>
-              <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+              <p className="max-w-[600px] text-gray-800 dark:text-slate-200 mx-auto xl:mx-0">
               {education.descripiton}
               </p>
 
@@ -153,7 +153,7 @@ const page = () => {
             <div className="flex flex-col gap-[30px]">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{skills.title}</h3>
-                <p className="max-w-[600px] text-gray-800 text-md mx-auto xl:mx-0
+                <p className="max-w-[600px] text-gray-800 dark:text-slate-200 text-md mx-auto xl:mx-0
                 font-semibold">
                 {skills.descripiton}
                 </p>
@@ -191,7 +191,7 @@ const page = () => {
           <TabsContent value="about" className="w-full text-center xl:text-left">
             <div className="flex flex-col gap-[30px]">
               <h3 className="text-4xl font-bold">{about.title}</h3>
-              <p className="max-w-[600px] text-gray-800 mx-auto xl:mx-0">
+              <p className="max-w-[600px] text-gray-800 dark:text-slate-200 mx-auto xl:mx-0">
               {about.descripiton}
               </p>
 

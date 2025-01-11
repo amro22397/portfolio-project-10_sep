@@ -18,23 +18,23 @@ const Social = ({ containerStyles, iconStyles}) => {
   return (
     <div className={containerStyles}>
       <Link href={socials[0].path} target="_blank">
-      <FaLinkedin className={`${iconStyles} text-blue-700`} />
+      <FaLinkedin className={`${iconStyles} text-blue-700 dark:text-white`} />
       </Link>
 
       <Link href={socials[1].path} target="_blank">
-      <FaFacebook className={`${iconStyles} text-blue-600`} />
+      <FaFacebook className={`${iconStyles} text-blue-600 dark:text-white`} />
       </Link>
 
       <Link href={socials[2].path} target="_blank">
-      <FaWhatsapp className={`${iconStyles} text-green-600`} />
+      <FaWhatsapp className={`${iconStyles} text-green-600 dark:text-white`} />
       </Link>
 
       <Link href={socials[3].path} target="_blank">
-      <FaYoutube className={`${iconStyles} text-red-600`} />
+      <FaYoutube className={`${iconStyles} text-red-600 dark:text-white`} />
       </Link>
 
       <Link href={socials[4].path} target="_blank">
-      <FaSquareUpwork className={`${iconStyles} text-green-600`} />
+      <FaSquareUpwork className={`${iconStyles} text-green-600 dark:text-white`} />
       </Link>
     </div>
   )

@@ -25,7 +25,7 @@ const page = async () => {
 
         
             
-                <AddProject  />
+                
     
     <ProjectFilter allProjects={allProjects} frontEndProjects={frontEndProjects}
                 fullStackProjects={fullStackProjects} />

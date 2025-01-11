@@ -7,6 +7,7 @@ import StairTransition from '../components/StairTransition'
 import AppProvider from "../components/AppContext";
 
 import Footer from '../components/Footer'
+import { Providers } from "./provider";
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -30,14 +31,15 @@ export default function RootLayout({ children }) {
         className={`${jetBrainsMono.variable} flex flex-col justify-center xl:max-w-[85%] mx-auto mb-12 max-xl:mt-4`}
       >
         <AppProvider>
-
-        <Header />
+          <Providers>
+            
+          <Header />
         
         <PageTransition>{children}</PageTransition>
 
         <Footer />
-        
-        
+
+          </Providers>
         </AppProvider>
 
         

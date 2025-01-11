@@ -14,11 +14,12 @@ const AddProject = () => {
     <>
     {session.status === 'authenticated' && (
 
-        <Link href="/add-project">
-        <button className='bg-yellow-500 px-4 py-[6px] text-whites rounded-sm
-        border-2 border-black max-sm:mx-2 mb-7
-        font-semibold hover:bg-yellow-400 active:bg-yellow-300 transition-all duration-500'
-    >Add Project</button>
+        <Link href="/add-project"
+        className='bg-yellow-600 px-4 py-[6px] text-white dark:text-white rounded-sm
+        max-sm:mx-2 hover:bg-yellow-700 active:bg-yellow-800 transition-all duration-500
+        text-lg'
+        >
+        Add Project
         </Link>
     )}
     

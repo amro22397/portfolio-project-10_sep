@@ -45,7 +45,7 @@ const Stats = ({allProjects}) => {
                             />
 
                             <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"}
-                            leading-sung text-black text-2xl font-semibold px-2`} >
+                            leading-sung text-black dark:text-white text-2xl font-semibold px-2`} >
                                 {item.text}
                             </p>
                         </div>

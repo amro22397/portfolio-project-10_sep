@@ -16,7 +16,7 @@ const Nav = () => {
         {links.map((link, index) => {
             return (
                 <Link href={link.path} key={index} className={`${link.path === pathname &&
-                    "border-b-2 border-gray-800"
+                    "border-b-2 border-gray-800 dark:border-slate-100"
                 }`}>
                     {link.name}
                 </Link>
