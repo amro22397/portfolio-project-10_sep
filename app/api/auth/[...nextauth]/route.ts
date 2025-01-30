@@ -7,7 +7,7 @@ import { User } from "../../../../models/User";
 
 
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
     secret: process.env.NEXTAUTH_SECRET,
     
     providers: [

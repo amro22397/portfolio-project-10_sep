@@ -1,27 +1,27 @@
-import mongoose from 'mongoose';
-import ProjectForm from '../../../components/ProjectForm'
-import { Project } from '../../../models/project';
-import { revalidatePath } from 'next/cache';
-import Link from 'next/link';
-
+import mongoose from "mongoose";
+import ProjectForm from "../../../components/ProjectForm";
+import { Project } from "../../../models/project";
+import { revalidatePath } from "next/cache";
+import Link from "next/link";
+import { getSession, useSession } from "next-auth/react";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../../api/auth/[...nextauth]/route";
 
 type PageProps = {
-    params: {
-        id: string;
-    },
+  params: {
+    id: string;
+  };
 };
 
 const page = async (pageProps: PageProps) => {
-
-
   const id = pageProps.params.id;
 
-  mongoose.connect(process.env.MONGO_URL)
+  mongoose.connect(process.env.MONGO_URL);
 
-    const project = await Project.findById({_id: id})
+  const project = await Project.findById({ _id: id });
 
-    revalidatePath('/');
-  
+  revalidatePath("/");
+
   // AWS S3 upload
   /*
 
@@ -81,12 +81,8 @@ const page = async (pageProps: PageProps) => {
     // AWS S3 upload
 */
 
-
-
-
-
-   // cloudinary multiple upload images
-/*
+  // cloudinary multiple upload images
+  /*
    const [selectedImages, setSelectedImages] = useState([]);
    const [uploadStatus, setUploadStatus] = useState("");
 
@@ -125,10 +121,9 @@ const page = async (pageProps: PageProps) => {
 };
 
 */
-   // cloudinary multiple upload images
+  // cloudinary multiple upload images
 
-
-    /* firebase upload
+  /* firebase upload
     const [uploading, setUploading] = useState(false);
     const [imageUploadError, setImageUploadError] = useState(false)
     const [imageUploading, setImageUploading] = useState(false);
@@ -152,7 +147,7 @@ const page = async (pageProps: PageProps) => {
       })
     } */
 
-      /* const data = new FormData();
+  /* const data = new FormData();
       data.append('files', files[0]);
       data.append('upload_preset', 'vxam2hsq');
 
@@ -167,26 +162,41 @@ const page = async (pageProps: PageProps) => {
       console.log(images) 
     } */
 
+  const session = (await getServerSession(authOptions)) as any;
+  console.log(session?.user?.email);
 
+  if (
+    session.status === "unauthenticated" ||
+    session?.user?.email !== "amroalmutasim22@gmail.com"
+  ) {
+    return (
+      <div className="text-center text-2xl font-bold">
+        Only admin can access this page...
+      </div>
+    );
+  }
 
   return (
-    <div className='flex flex-col items-center w-full'>
-
-<Link href="/projects"
-className='mb-5 flex flex-row justify-start items-start content-start'>
-                <button className='bg-yellow-500 px-4 py-[6px] text-whites rounded-sm
+    <div className="flex flex-col items-center w-full">
+      
+      <Link
+        href="/projects"
+        className="mb-5 flex flex-row justify-start items-start content-start"
+      >
+        <button
+          className="bg-yellow-500 px-4 py-[6px] text-whites rounded-sm
                 border-2 border-black
-                font-semibold hover:bg-yellow-400 active:bg-yellow-700 transition-all duration-500'
-            >Back to projects</button>
-                </Link>
+                font-semibold hover:bg-yellow-400 active:bg-yellow-700 transition-all duration-500"
+        >
+          Back to projects
+        </button>
+      </Link>
 
-      <h1 className='mb-4 text-2xl font-bold'>Edit project</h1>
+      <h1 className="mb-4 text-2xl font-bold">Edit project</h1>
 
       <ProjectForm project={project} id={id} />
-      
-      
     </div>
-    )
-}
+  );
+};
 
-export default page
+export default page;

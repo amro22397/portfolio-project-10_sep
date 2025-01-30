@@ -168,7 +168,7 @@ const page = () => {
       const session = useSession();
       console.log(session)
     
-      if (session.status === 'unauthenticated') {
+      if (session.status === 'unauthenticated' || session.data?.user?.email !== "amroalmutasim22@gmail.com") {
         return (
           <div className="text-center text-2xl font-bold">
             Only admin can access this page...

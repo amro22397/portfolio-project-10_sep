@@ -36,11 +36,12 @@ const EditDeleteButtons = ({id}) => {
 
 
         const session = useSession();
+        console.log(session.data?.user?.email)
         
 
   return (
     <>
-    {session.status === 'authenticated' && (
+    {session.status === 'authenticated' && session.data?.user?.email === "amroalmutasim22@gmail.com" && (
         <div className="flex flex-row gap-7
         mr-[6px]">
 
