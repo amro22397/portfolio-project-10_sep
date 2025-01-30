@@ -101,7 +101,7 @@ const handleChange = () => {
           <div className="xl:h-[54%] order-2 xl:order-none">
 
             <form onSubmit={handleSubmit}
-            className="flex flex-col gap-6 p-10 bg-[#27272c] dark:bg-[#414149] xl:rounded-xl rounded-none">
+            className="flex flex-col gap-6 p-10 bg-[#27272c] dark:bg-[#414149] sm:rounded-xl rounded-none">
               <h3 className="text-4xl text-orange-400">Let's work together</h3>
               <p className="text-white/60">
               I'm happy to get request for web designs and I will make it as soon as I can...
