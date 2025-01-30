@@ -50,7 +50,7 @@ export default async function page(props: PageProps) {
 
 
         <div className="container flex flex-col max-xl:items-center justify-center mx-auto
-        mt-9 mb-40">
+        mt-9 mb-40 overflow-x-hidden">
 
 
             <div className="flex flex-col xl:flex-row xl:gap-[30px]
@@ -59,7 +59,7 @@ export default async function page(props: PageProps) {
                 <pre className='hidden'>{JSON.stringify(project, null, 2)}</pre>
 
                 <div className=" xl:h-[460px] flex flex-col
-                mx-0 max-xl:mx-7 w-full ">
+                mx-0 max-xl:mx-4 max-w-full ">
                     
 
                     <div className=" flex flex-row items-center justify-between

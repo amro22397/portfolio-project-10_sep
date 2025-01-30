@@ -21,7 +21,7 @@ const page = async () => {
 
   return (
      
-    <div className="container mx-auto">
+    <div className="container mx-auto overflow-x-hidden">
 
         
             
