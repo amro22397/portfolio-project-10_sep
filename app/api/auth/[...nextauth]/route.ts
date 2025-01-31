@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { AuthOptions, NextAuthOptions } from "next-auth";
-import NextAuth from "next-auth/next";
+import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials"
 import { User } from "../../../../models/User";
