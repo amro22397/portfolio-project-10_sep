@@ -4,10 +4,10 @@ import "./globals.css";
 import Header from "../components/Header";
 import PageTransition from "../components/PageTransition";
 import StairTransition from '../components/StairTransition'
-import AppProvider from "../components/AppContext";
 
 import Footer from '../components/Footer'
 import { Providers } from "./provider";
+import AppProvider from "../AppContext.js"
 
 const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${jetBrainsMono.variable} flex flex-col justify-center xl:max-w-[85%] mx-auto mb-12 max-xl:mt-4`}
       >
-        <AppProvider>
+        <AppProvider session>
           <Providers>
             
           <Header />

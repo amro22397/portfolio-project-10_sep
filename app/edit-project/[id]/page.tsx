@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import Link from "next/link";
 import { getSession, useSession } from "next-auth/react";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../../../pages/api/auth/[...nextauth]";
+import { authOptions } from "../../api/auth/[...nextauth]/route";
 
 type PageProps = {
   params: {

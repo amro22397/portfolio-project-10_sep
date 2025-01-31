@@ -26,7 +26,7 @@ export const authOptions: NextAuthOptions = {
                 if (!credentials || !credentials.email || !credentials.password)
                     return null;
 
-                mongoose.connect(process.env.MONGO_URL);
+                mongoose.connect(process.env.MONGO_URL as string);
                 const dbUser = await User.findOne({email: credentials.email});
 
 

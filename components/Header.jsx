@@ -40,7 +40,7 @@ const Header = () => {
         {session.status === 'authenticated' && (
             <div className='flex flex-row text-black dark:text-white mx-10 font-semibold
             gap-4'>
-              <p>{session.data.user.email}</p>
+              <p>{session?.data?.user?.email}</p>
 
               <button onClick={() => {
          signOut({callbackUrl: '/'}) }}
@@ -103,7 +103,7 @@ const Header = () => {
             {session.status === 'authenticated' && (
             <div className='flex flex-row text-black dark:text-white justify-center mb-4 font-semibold
             gap-4 mx-auto'>
-              <p>{session.data.user.email}</p>
+              <p>{session?.data?.user?.email}</p>
 
               <button onClick={() => {
          signOut({callbackUrl: '/'}) }}
