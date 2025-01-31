@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { NextAuthOptions } from "next-auth";
+import { AuthOptions, NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google"
 import CredentialsProvider from "next-auth/providers/credentials"
@@ -7,7 +7,7 @@ import { User } from "../../../../models/User";
 
 
 
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthOptions = {
     secret: process.env.NEXTAUTH_SECRET,
     
     providers: [
@@ -26,7 +26,7 @@ export const authOptions: NextAuthOptions = {
                 if (!credentials || !credentials.email || !credentials.password)
                     return null;
 
-                mongoose.connect(process.env.MONGO_URL);
+                mongoose.connect(process.env.MONGO_URL as string);
                 const dbUser = await User.findOne({email: credentials.email});
 
 
