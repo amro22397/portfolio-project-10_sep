@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import Link from "next/link";
 import { getSession, useSession } from "next-auth/react";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../../api/auth/[...nextauth]/route";
+import { authOptions } from "../../../pages/api/auth/[...nextauth]";
 
 type PageProps = {
   params: {
@@ -16,7 +16,7 @@ type PageProps = {
 const page = async (pageProps: PageProps) => {
   const id = pageProps.params.id;
 
-  mongoose.connect(process.env.MONGO_URL);
+  mongoose.connect(process.env.MONGO_URL as string);
 
   const project = await Project.findById({ _id: id });
 

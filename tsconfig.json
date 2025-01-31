@@ -21,14 +21,16 @@
         "name": "next"
       }
     ],
-    "target": "ES2017"
+    "target": "ES2017",
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "app/api/sign-image/route.ts"  ],
+    "**/*.tsx",
+    "app/api/sign-image/route.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
